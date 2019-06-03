@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="textbox">
+<input type="button" value="Tìm kiếm" onclick="Timkiem();">
+<p id="result">Kết quả</p>
+<script>
+
+    var TiengAnh= ['hello','fun','sun','moon'];
+    var TiengViet=['Xin chào','vui vẻ','mặt trời',' mặt trăng'];
+    var index=-1;
+
+    var res='';
+    var element=document.getElementById('textbox');
+
+    function Timkiem() {
+        index=-1;
+        for(var i=0;i<TiengAnh.length;i++)
+        {
+            if(element.value==TiengAnh[i])
+            {
+                index=i;
+                break;
+            }
+        }
+       if(index!=-1)
+       {
+            res=TiengAnh[index]+' có nghĩa là '+TiengViet[index];
+       }
+       else
+           {
+               res='Không tìm thấy';
+           }
+       document.getElementById('result').innerHTML=res;
+    }
+
+</script>
+</body>
+</html>
